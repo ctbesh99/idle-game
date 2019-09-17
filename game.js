@@ -11,6 +11,7 @@ createButton('Clicker2', btnPress2,);
 
 setInterval(btnPress, 1000);
 setInterval(btnPress2, 1000);
+setInterval(btnPress3, 1000);
 function btnPress2() {
   score--;
   postToPage(score);
@@ -20,7 +21,7 @@ function btnPress2() {
   score++;
   postToPage(score);
 
-  if(score > 100) {
+  if(score == 100) {
   postToPage(locked)
 }
 
