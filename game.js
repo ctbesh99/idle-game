@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var score = 0;
 var locked = 'You got a hat!'
 
@@ -37,7 +37,7 @@ function btnPress2() {
 
 
 
-=======
+
 var score = 1; // Create a variable to store the score in
 
 var title = new Title('Welcome to the Game'); // Create a title element
@@ -50,4 +50,4 @@ function btnPress() {
   score++;         // Increase the score
   scr.edit(score); // Update the page with the new score
 }
->>>>>>> upstream/master
+
