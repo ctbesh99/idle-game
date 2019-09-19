@@ -1,5 +1,4 @@
 var score = 0; 
-
 var title = new Title('Start by getting 20 clicks!'); 
 var button = new Button('Click+', btnPress);   
 var scr = new Text(score);                    
@@ -47,5 +46,6 @@ function btnPress2() {
   title2.hide()
   title3.show()
   beg = 'end'
+
   }
 }
