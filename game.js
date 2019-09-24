@@ -35,6 +35,7 @@ if(score == 1) {
   
 }
 
+
   }
 
 function btnPress2() {
@@ -59,6 +60,7 @@ if(num == 300) {
 
   button3.show()
   button4.show()
+
 
 }
 }
