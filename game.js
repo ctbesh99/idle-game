@@ -134,7 +134,9 @@ function btnPress9() {
 
 }
 
-function btnPress10()
+function btnPress10() {
+  
+}
 
 score--;
 
