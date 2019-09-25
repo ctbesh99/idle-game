@@ -1,11 +1,13 @@
 var score = 0;
 var num = 0;
+var flash = 5;
 var title = new Title("Ugg it's 3:00am");
 title.hide()
 var title2 = new Title("'A scratching noise can be heard coming from the basement!'");
 title2.hide()
 var button = new Button('Wake Up', btnPress);   
-var scr = new Text(score);                    
+var scr = new Text(flash);  
+scr.hide()                  
 let button2 = new Button('Next', btnPress2);
 button2.hide()
 let button3 = new Button('Leave it', btnPress3);
@@ -24,13 +26,26 @@ let button9 = new Button('Find flashlight', btnPress9);
 button9.hide()
 let button10 = new Button('Go Investigate', btnPress10);
 button10.hide()
+let button11 = new Button('Continue', btnPress11);
+button11.hide()
+let button12 = new Button('Go Investigate', btnPress12);
+button12.hide()
+let Crank = new Button('Crank', Crank1);
+Crank.hide()
 let sub1 = new Button('sub', sub);
 sub1.hide()
-var beg = 'beginning'
+var beg = 10
+
+
+
                   
 setInterval(btnPress, 1000); 
 setInterval(btnPress2, 1000);
-setInterval(numIncrease, 1000);  
+setInterval(numIncrease, 1000); 
+
+if(beg == 10) {
+  flash--;
+}
 
 function btnPress() {
   score = 1;       
@@ -123,15 +138,53 @@ function btnPress8() {
   title.edit("'There are now banging noises coming from the basement door!'")
   button9.show()
   button10.show()
+  button1.remove()
+  button2.remove()
+  button3.remove()
+  button4.remove()
+  button5.remove()
+  button6.remove()
+  button7.remove()
 }
 
 function btnPress9() {
-
+  button9.hide()
+  button10.hide()
+  title2.edit('Tip: Always keep the flashlight cranked while in the basement! Do it by pressing the crank button! Make sure that the number always stays above 0!')
+  title.edit("'you fumble around in the darkness until you find a crank up flash light.'")
+  title2.show()
+  Crank.show()
+  button12.show()
 }
 
 function btnPress10() {
+  title.edit("'A figure of midnight black lunges at you from the basement!'")
+  button9.hide()
+  button10.hide()
+  button11.show()
+  
+
+}
+
+function btnPress11() {
+  button11.hide()
+  title.edit("'You head is nauled off and you parish in a bloody mess.'")
   
 }
+
+function Crank1() {
+  flash++;
+  scr.show()
+  scr.edit(flash)
+  
+
+}
+
+function btnPress12() {
+  beg = 10
+  title.edit("'You began to venture in the basement. A dark figure swoops across the room.'")
+}
+
 
 
 
