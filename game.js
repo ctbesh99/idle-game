@@ -63,11 +63,6 @@ if(score == 3) {
   button3.show()
   button4.show()
  
-
-
-
-
-
 }
 }
 
@@ -137,6 +132,8 @@ function btnPress9() {
 function btnPress10() {
   
 }
+
+
 
 score--;
 
