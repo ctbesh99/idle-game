@@ -1,6 +1,6 @@
 var score = 0;
 var num = 0;
-var flash = 5;
+var flash = 6;
 var title = new Title("Ugg it's 3:00am");
 title.hide()
 var title2 = new Title("'A scratching noise can be heard coming from the basement!'");
@@ -30,11 +30,16 @@ let button11 = new Button('Continue', btnPress11);
 button11.hide()
 let button12 = new Button('Go Investigate', btnPress12);
 button12.hide()
+let button13 = new Button('Continue', btnPress13);
+button13.hide()
+let button14 = new Button('Turn on light', btnPress14);
+button14.hide()
 let Crank = new Button('Crank', Crank1);
 Crank.hide()
 let sub1 = new Button('sub', sub);
 sub1.hide()
 var beg = 10
+var flash1; 
 
 
 
@@ -43,9 +48,8 @@ setInterval(btnPress, 1000);
 setInterval(btnPress2, 1000);
 setInterval(numIncrease, 1000); 
 
-if(beg == 10) {
-  flash--;
-}
+
+
 
 function btnPress() {
   score = 1;       
@@ -153,7 +157,7 @@ function btnPress9() {
   title2.edit('Tip: Always keep the flashlight cranked while in the basement! Do it by pressing the crank button! Make sure that the number always stays above 0!')
   title.edit("'you fumble around in the darkness until you find a crank up flash light.'")
   title2.show()
-  Crank.show()
+  
   button12.show()
 }
 
@@ -183,9 +187,53 @@ function Crank1() {
 function btnPress12() {
   beg = 10
   title.edit("'You began to venture in the basement. A dark figure swoops across the room.'")
+  flash1 = setInterval(flash2, 1000);
+  Crank.show()
+  flash--;
+  button12.hide()
+  button12.remove()
+  button8.remove()
+  button9.remove()
+  
+}
+
+function btnPress13() {
+  title.edit("'Further in you go, fear fills your entire body. There is a light!'")
+  title2.hide()
+  button14.show()
+  button13.hide()
+  
+}
+
+function btnPress14() {
+title.edit("'They light does not work!'")
+button14.hide()
+
+}
+
+function flash2() {
+  flash--;
+  scr.edit(flash)
+
+  if(flash == 0) {
+  
+  Crank.hide()
+  button13.hide()
+title2.hide()
+title.edit('YOU DIED! Tip: Next time, crank the flash light!')
+StopLoop()
+
+}
+
+if(flash > 10) {
+  flash = 10
+}
 }
 
 
+function StopLoop() {
+  clearInterval(flash1)
+}
 
 
 score--;
