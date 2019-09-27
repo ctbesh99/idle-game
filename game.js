@@ -34,6 +34,16 @@ let button13 = new Button('Continue', btnPress13);
 button13.hide()
 let button14 = new Button('Turn on light', btnPress14);
 button14.hide()
+let button15 = new Button('Try again', btnPress15);
+button15.hide()
+let button16 = new Button('Leave it', btnPress16);
+button16.hide()
+let button17 = new Button('Continue', btnPress17);
+button17.hide()
+let button18 = new Button('fight', btnPress18);
+button18.hide()
+let button19 = new Button('flee', btnPress19);
+button19.hide()
 let Crank = new Button('Crank', Crank1);
 Crank.hide()
 let sub1 = new Button('sub', sub);
@@ -194,6 +204,7 @@ function btnPress12() {
   button12.remove()
   button8.remove()
   button9.remove()
+  button13.show()
   
 }
 
@@ -208,7 +219,53 @@ function btnPress13() {
 function btnPress14() {
 title.edit("'They light does not work!'")
 button14.hide()
+button15.show()
+button16.show()
 
+}
+
+function btnPress15() {
+  flash1 = setInterval(flash2, 500)
+  title.edit("'They light explodes. Your flash light is slightly damaged'")
+  button15.hide()
+  button16.hide()
+  button17.show()
+}
+
+function btnPress16() {
+  title.edit("'You don't touch the light again in fear it may break.")
+  button16.hide()
+  button15.hide()
+  button17.show()
+}
+
+function btnPress17() {
+  title.edit("'The creature appears before you!'")
+  button18.show()
+  button19.show()
+  button17.hide()
+
+}
+
+function btnPress18() {
+
+  title.edit("'You shine the light into the face of the dark figure. It lets out a blood curtaling scream and sizzles into dust!'")
+button18.hide()
+button19.hide()
+title2.edit('GOOD ENDING!')
+title2.show()
+Crank.hide()
+StopLoop()
+}
+
+function btnPress19() {
+  title.edit("you run up the stairs but just as you reach the top, the creature grabs you and eats you!")
+button18.hide()
+button19.hide()
+title2.edit('BAD ENDING')
+title2.show()
+Crank.hide()
+StopLoop()
 }
 
 function flash2() {
@@ -216,10 +273,13 @@ function flash2() {
   scr.edit(flash)
 
   if(flash == 0) {
-  
+  flash = 0
   Crank.hide()
   button13.hide()
-title2.hide()
+  button14.hide()
+  button15.remove()
+  button16.remove()
+ title2.hide()
 title.edit('YOU DIED! Tip: Next time, crank the flash light!')
 StopLoop()
 
